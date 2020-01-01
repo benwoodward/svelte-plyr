@@ -5,7 +5,9 @@
   export let options = {}
   export let player = {}
 
-  $: function opts () {
+  $: opts()
+
+  function opts () {
     if (!options.hasOwnProperty('hideYouTubeDOMError')) {
       options.hideYouTubeDOMError = true
     }
@@ -17,7 +19,7 @@
     emit.forEach(element => {
       player.on(element, this.emitPlayerEvent)
     })
-  }
+  })
 
   onDestroy(() => {
     try {
@@ -28,7 +30,7 @@
         console.error(e)
       }
     }
-  }
+  })
 
   function emitPlayerEvent (event) {
     this.$emit(event.type, event)
@@ -37,7 +39,7 @@
 
 <div>
   <slot></slot>
-</div
+</div>
 
 <style src="../node_modules/plyr/dist/plyr.css">
 </style>
