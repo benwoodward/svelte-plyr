@@ -1,9 +1,11 @@
 <script>
+  import { onMount, onDestroy } from 'svelte';
   import Plyr from 'plyr'
 
   export let emit = []
   export let options = {}
   export let player = {}
+  export let plyr
 
   $: opts()
 
@@ -15,7 +17,7 @@
   }
 
   onMount(async () => {
-    player = new Plyr(this.$el.firstChild, this.opts)
+    player = new Plyr(plyr.firstChild, this.opts)
     emit.forEach(element => {
       player.on(element, this.emitPlayerEvent)
     })
@@ -37,10 +39,10 @@
   }
 </script>
 
-<div>
+<div bind:this={plyr}>
   <slot></slot>
 </div>
 
-<style src="../node_modules/plyr/dist/plyr.css">
+<style src="../../node_modules/plyr/dist/plyr.css">
 </style>
 
