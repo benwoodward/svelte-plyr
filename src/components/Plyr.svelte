@@ -39,10 +39,11 @@
   /* } */
 </script>
 
+<style lang="css" src="../../node_modules/plyr/dist/plyr.css" global>
+</style>
+
 <div bind:this={plyrDiv}>
   <slot></slot>
 </div>
 
-<style src="../../node_modules/plyr/dist/plyr.css">
-</style>
 
