@@ -22,16 +22,16 @@
     eventsToEmit.forEach(event => dispatchOnPlayerEvent(event))
   })
 
-  /* onDestroy(() => { */
-  /*   try { */
-  /*     this.player.destroy() */
-  /*   } catch (e) { */
-  /*     if (!(this.opts.hideYouTubeDOMError && e.message === 'The YouTube player is not attached to the DOM.')) { */
-  /*       // eslint-disable-next-line no-console */
-  /*       console.error(e) */
-  /*     } */
-  /*   } */
-  /* }) */
+  onDestroy(() => {
+    try {
+      player.destroy()
+    } catch (e) {
+      if (!(opts.hideYouTubeDOMError && e.message === 'The YouTube player is not attached to the DOM.')) {
+        // eslint-disable-next-line no-console
+        console.error(e)
+      }
+    }
+  })
 
   function dispatchOnPlayerEvent (event) {
     player.on(event, data => dispatch(event, {}))
