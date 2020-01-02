@@ -1,12 +1,18 @@
 <script>
   import { Plyr } from './components/components.module.js';
+
+  let events = ['timeupdate']
+
+  function logEvent(event) {
+    console.log(event)
+  }
 </script>
 
 <style>
 </style>
 
 <h1>Video Player</h1>
-<Plyr>
+<Plyr on:timeupdate={logEvent} eventsToEmit={events}>
   <video
     crossorigin
     playsinline
