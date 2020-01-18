@@ -1,5 +1,5 @@
 import { terser } from 'rollup-plugin-terser';
-import scss from 'rollup-plugin-scss'
+import postcss from 'rollup-plugin-postcss'
 import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
@@ -40,7 +40,9 @@ export default {
 		babel({
 			runtimeHelpers: true,
 		}),
-    scss(),
+    postcss({
+      plugins: []
+    }),
 		svelte({
 			// enable run-time checks when not in production
 			dev: !production,
