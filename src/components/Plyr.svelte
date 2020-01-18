@@ -1,6 +1,7 @@
 <script>
   import { onMount, onDestroy, createEventDispatcher } from 'svelte';
   import Plyr from 'plyr'
+  import '../plyr.scss'
 
   export let eventsToEmit = []
   export let options = {}
@@ -37,9 +38,6 @@
     player.on(event, data => dispatch(event, {}))
   }
 </script>
-
-<style lang="css" src="../../node_modules/plyr/dist/plyr.css" global>
-</style>
 
 <div bind:this={plyrDiv}>
   <slot></slot>

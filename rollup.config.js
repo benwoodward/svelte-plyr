@@ -1,5 +1,5 @@
 import { terser } from 'rollup-plugin-terser';
-import autoPreprocess from 'svelte-preprocess';
+import scss from 'rollup-plugin-scss'
 import babel from 'rollup-plugin-babel';
 import commonjs from 'rollup-plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
@@ -40,6 +40,7 @@ export default {
 		babel({
 			runtimeHelpers: true,
 		}),
+    scss(),
 		svelte({
 			// enable run-time checks when not in production
 			dev: !production,
@@ -53,10 +54,7 @@ export default {
 			 * Auto preprocess supported languages with
 			 * '<template>'/'external src files' support
 			 **/
-			preprocess: autoPreprocess({
-				postcss: true,
-				scss: { includePaths: ['src', 'node_modules'] }
-			}),
+      preprocess: [],
 		}),
 
 		// If you have external dependencies installed from
