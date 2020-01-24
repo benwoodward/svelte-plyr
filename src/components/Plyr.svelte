@@ -35,7 +35,7 @@
   })
 
   function dispatchOnPlayerEvent (event) {
-    player.on(event, data => dispatch(event, {}))
+    player.on(event, data => dispatch(event, data.detail.plyr))
   }
 </script>
 
