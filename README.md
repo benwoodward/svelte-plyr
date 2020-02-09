@@ -11,8 +11,31 @@ This component is released under a MIT license.
 
 Examples: [https://github.com/benwoodward/svelte-plyr/blob/master/src/App.svelte](App.svelte)
 
+## Installation
+
+Install the plugin + required dependencies:
+
 ```bash
 npm install --save svelte-plyr plyr rollup-plugin-postcss node-sass
+```
+
+Add `postcss` to your `rollup.config.js` (or `webpack.config.js`)
+
+```javascript
+import postcss from 'rollup-plugin-postcss';
+
+export default {
+	input: 'src/main.js',
+	output: {
+		sourcemap: true,
+		format: 'iife',
+		name: 'app',
+		file: 'public/build/bundle.js'
+	},
+	plugins: [
+    postcss(),
+  ]
+};
 ```
 
 You may then begin to write a parent component that leverages the `<Plyr>` component:
