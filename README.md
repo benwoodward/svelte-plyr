@@ -9,7 +9,7 @@
 
 This component is released under a MIT license.
 
-Examples: [https://github.com/benwoodward/svelte-plyr/blob/master/src/App.svelte](App.svelte)
+Examples: [https://github.com/benwoodward/svelte-plyr/blob/master/src/App.svelte](src/App.svelte)
 
 ## Installation
 
