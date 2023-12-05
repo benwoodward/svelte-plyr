@@ -19,7 +19,7 @@
   }
 
   onMount(async () => {
-    player = new Plyr(plyrDiv.firstChild, opts)
+    player = new Plyr(plyrDiv.firstChild, opts())
     eventsToEmit.forEach(event => dispatchOnPlayerEvent(event))
   })
 
